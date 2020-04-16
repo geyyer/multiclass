@@ -77,16 +77,15 @@ datagen = ImageDataGenerator(featurewise_center=False,
                              )
 datagen.fit(train_x)
 
-# train the model - holdout
+# train the model
 model.train_model_holdout(train_x=train_x,
                           train_y=train_y,
-                          epochs=100,
-                          batch_size=1,
+                          epochs=epochs,
+                          batch_size=batch_size,
                           validation_data=(val_x, val_y),
                           data_size=-1
                           )
 
-# model evaluation
 # train set evaluation
 print('evaluating train set')
 results = model.model.evaluate(train_x, train_y)
