@@ -5,7 +5,7 @@ import pandas as pd
 from keras import models
 from keras.preprocessing.image import ImageDataGenerator
 from keras.utils import to_categorical
-from model import ModelCustomInception
+from model import ModelCustom
 from sklearn.model_selection import train_test_split
 
 # consts
@@ -47,9 +47,9 @@ src_size = (train_x.shape[1], train_x.shape[2], 1)
 dst_size = (train_y.shape[1])
 
 # instantiate a model
-model = ModelCustomInception(src_size=src_size,
-                             dst_size=dst_size
-                             )
+model = ModelCustom(src_size=src_size,
+                    dst_size=dst_size
+                    )
 
 # build a model
 model.build(optimizer='Adam',
